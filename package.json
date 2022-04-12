@@ -8,6 +8,7 @@
     "@popperjs/core": "^2.11.5",
     "bootstrap": "4.3.1",
     "fastclick": "1.0.6",
+    "favicon": "^0.0.2",
     "font-awesome": "4.6.3",
     "jquery": "2.2.4",
     "malihu-custom-scrollbar-plugin": "3.1.3",
