@@ -2,6 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-//= require jquery/jquery
+//= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap
 //= require sb-admin-2
