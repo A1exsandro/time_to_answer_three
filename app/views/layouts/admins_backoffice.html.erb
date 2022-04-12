@@ -64,7 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <%= link_to admins_backoffice_admins_index_path, class:"collapse-item" do %>
+                        <%= link_to admins_backoffice_admins_path, class:"collapse-item" do %>
                             Administradores
                         <% end %>
                     </div>
@@ -248,11 +248,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-                    <h1>LAYOUT ADMINS_BACKOFICCE</h1>
                     <%= yield %>
-                    <%= link_to admins_backoffice_admins_index_path, class:"collapse-item" do %>
-                        Administradores
-                    <% end %>
                 </div>
                 <!-- /.container-fluid -->
 
