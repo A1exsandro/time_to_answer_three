@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index'
+    
   end
   devise_for :users
   devise_for :admins
