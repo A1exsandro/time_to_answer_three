@@ -23,7 +23,7 @@
       <tr>
         <th scope="row"><%= question.id %></th>
         <td><%= question.description.truncate(50) %></td>
-        <td><%= question.description.truncate(30) %></td>
+        <td><%= question.subject.description.truncate(30) %></td>
         <td>
           <%= link_to edit_admins_backoffice_question_path(question)  do %>
               <button class="btn btn-primary" type="button">Editar</button>
