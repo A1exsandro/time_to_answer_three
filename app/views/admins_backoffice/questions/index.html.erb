@@ -2,7 +2,7 @@
 
   <h1>Listando Perguntas</h1>
     
-  <%= link_to new_admins_backoffice_subject_path do %>
+  <%= link_to new_admins_backoffice_question_path do %>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <button class="btn btn-success" type="button">Criar Nova Perguntas</button>
     </div>               
@@ -22,7 +22,7 @@
       <% @questions.each do |question| %>
       <tr>
         <th scope="row"><%= question.id %></th>
-        <td><%= question.description.truncate(50) %></td>
+        <td><%= sanitize question.description.truncate(50) %></td>
         <td><%= question.subject.description.truncate(30) %></td>
         <td>
           <%= link_to edit_admins_backoffice_question_path(question)  do %>
