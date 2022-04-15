@@ -8,7 +8,7 @@ class Question < ApplicationRecord
 
   scope :_search_, ->(page, term){
     includes(:answers)
-            .where("lower(description) LIKE ?", "%#{term.downcase}%")
+            .where("description LIKE ?", "%#{term}%")
             .page(page)
   }
 
