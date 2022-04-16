@@ -6,13 +6,19 @@ class Question < ApplicationRecord
   #kaminari
   paginates_per 5
 
+  scope :_search_subject_, ->(page, subject_id){
+    includes(:answers, :subject)
+    .where(subject_id: subject_id)
+    .page(page)
+  }
+
   scope :_search_, ->(page, term){
-    includes(:answers)
+    includes(:answers, :subject)
             .where("description LIKE ?", "%#{term}%")
             .page(page)
   }
 
   scope :last_questions, ->(page){
-    includes(:answers).order('created_at desc').page(page)
+    includes(:answers, :subject).order('created_at desc').page(page)
   }
 end
