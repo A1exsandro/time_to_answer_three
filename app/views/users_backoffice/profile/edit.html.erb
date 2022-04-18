@@ -10,29 +10,58 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <br>
-                <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                 <% if @user.errors.any? %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                            
+                            <ul>
+                                <% @user.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    <% end %>
+                <%= form_with(url: users_backoffice_profile_path, model: @user, local: true) do |form| %>
+                
+                    <div class="item form-group">
+                        <%= form.label :fisrt_name, class:"col-form-label col-md-3 col-sm-3 label-align" %>
+                        <div class="col-md-6 col-sm-6 ">
+                            <%= form.text_field :first_mane, 
+                                      class:"form-control" %>
+                        </div>
+                    </div>
+                    
+                    <div class="item form-group">
+                        <%= form.label :last_name, class:"col-form-label col-md-3 col-sm-3 label-align" %>
+                        <div class="col-md-6 col-sm-6 ">
+                            <%= form.text_field :last_mane, 
+                                      class:"form-control" %>
+                        </div>
+                    </div>
 
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
-                        </label>
+                        <%= form.label :email, class:"col-form-label col-md-3 col-sm-3 label-align" %>
                         <div class="col-md-6 col-sm-6 ">
-                            <input type="text" id="first-name" required="required" class="form-control ">
+                            <%= form.text_field :email, 
+                                      class:"form-control", 
+                                      readonly: true %>
                         </div>
                     </div>
+
                     <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name <span class="required">*</span>
-                        </label>
+                        <%= form.label :password, class:"col-form-label col-md-3 col-sm-3 label-align" %>
                         <div class="col-md-6 col-sm-6 ">
-                            <input type="text" id="last-name" name="last-name" required="required" class="form-control">
+                            <%= form.password_field :password, class:"form-control", placeholder:"Senha do administrador" %>
                         </div>
                     </div>
+
                     <div class="item form-group">
-                        <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Email</label>
+                        <%= form.label :password_confirmation, class:"col-form-label col-md-3 col-sm-3 label-align" %>
                         <div class="col-md-6 col-sm-6 ">
-                            <input id="middle-name" class="form-control" type="text" name="middle-name">
+                            <%= form.password_field :password_confirmation, class:"form-control", placeholder:"Confirme a Senha" %>
                         </div>
                     </div>
+
                     <div class="ln_solid"></div>
                     <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
@@ -41,7 +70,7 @@
                         </div>
                     </div>
 
-                </form>
+                <% end %>
             </div>
         </div>
     </div>
