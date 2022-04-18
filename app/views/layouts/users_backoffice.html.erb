@@ -46,6 +46,11 @@
               <div class="menu_section">
                 <ul class="nav side-menu">                  
                   <li>
+                    <%= link_to users_backoffice_welcome_index_path do %>
+                      <i class="fa fa-home"></i>Início
+                    <% end %>
+                  </li>
+                  <li>
                     <%= link_to users_backoffice_profile_path do %>
                       <i class="fa fa-user"></i>Dados do Perfil
                     <% end %>
@@ -178,8 +183,7 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
-              <div class="title_left">
-                <h1>LAYOUT USERS BACKOFFICE</h1>
+              <div class="title_center">
                 <%= yield %>
               </div>
             </div>
